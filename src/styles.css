@@ -1,0 +1,184 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-navy: #00142c;
+  --color-navy-2: #012845;
+  --color-navy-3: #003a63;
+  --color-ink: #1e3548;
+  --color-muted: #5b7088;
+  --color-cloud: #8aa0b5;
+  --color-line: #d6e0ec;
+  --color-line-2: #e7eef5;
+  --color-paper: #eef3fa;
+  --color-card: #ffffff;
+  --color-blue: #017acb;
+  --color-blue-2: #0e9ae0;
+  --color-teal: #0e7c86;
+  --color-ok: #047857;
+  --color-ok-bg: #d1fae5;
+  --color-warn: #b45309;
+  --color-warn-bg: #fef3c7;
+  --color-alert: #b91c1c;
+  --color-alert-bg: #fee2e2;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  --shadow-card: 0 4px 18px rgba(0, 20, 44, 0.06);
+  --shadow-lift: 0 14px 28px rgba(0, 20, 44, 0.12);
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.select-panel {
+  appearance: none;
+  background-color: color-mix(in oklab, white 12%, transparent);
+  color: white;
+  border: 1px solid color-mix(in oklab, white 22%, transparent);
+  border-radius: 10px;
+  padding: 0.55rem 2rem 0.55rem 0.85rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='white' d='M1 1l5 5 5-5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+}
+
+.select-panel option {
+  color: #00142c;
+  background: #fff;
+}
+
+.select-light {
+  appearance: none;
+  background: #fff;
+  color: var(--color-ink);
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  padding: 0.45rem 2rem 0.45rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.82rem;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%235B7088' d='M1 1l5 5 5-5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.65rem center;
+}
+
+.hc-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.875rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+}
+.hc-table th,
+.hc-table td {
+  padding: 0.7rem 0.75rem;
+  text-align: right;
+  border-bottom: 1px solid var(--color-line-2);
+}
+.hc-table th {
+  background: linear-gradient(180deg, #012845 0%, #00142c 100%);
+  color: #dce9f6;
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  border-bottom: none;
+}
+.hc-table td:first-child,
+.hc-table th:first-child {
+  text-align: left;
+}
+.hc-table tbody tr:nth-child(even) {
+  background: #f7fafd;
+}
+.hc-table tbody tr:hover {
+  background: #eaf3fc;
+}
+.hc-table tr:last-child td {
+  border-bottom: none;
+}
+
+.pos-bar {
+  position: relative;
+  height: 9px;
+  width: 110px;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  background: linear-gradient(90deg, #d1fae5 0%, #fef3c7 50%, #fee2e2 100%);
+  border: 1px solid var(--color-line);
+}
+.pos-mark {
+  position: absolute;
+  top: -4px;
+  width: 4px;
+  height: 17px;
+  background: #00142c;
+  border-radius: 2px;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+  body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-show {
+    display: block !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

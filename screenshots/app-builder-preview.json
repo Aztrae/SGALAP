@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Panel SGA Lapisa",
+      "hasCanvas": false,
+      "bodyTextLen": 1692,
+      "bodyTextHash": "846508fdc19ab5e76b32be5d9f38b1a6b77573c05a113ad8021742668f22cb94",
+      "bodyTextPrefix": "Panel SGA Lapisa · Sustentabilidad UBICACIÓN Planta Principal Pl",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Panel SGA Lapisa",
+      "hasCanvas": false,
+      "bodyTextLen": 1397,
+      "bodyTextHash": "ec03fc46c7f4eda6dd6cc09e769b8b4def21d9ad6e7443d50805f37c02897f18",
+      "bodyTextPrefix": "Resumen ejecutivo Desempeño ambiental consolidado · 2026 · Q3 · ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [
+    "BRAND NOTE: no custom public/og.jpg — the platform will serve the og.grok.me placeholder. Custom cards are the default for games of every kind (DOM board/word games included), whimsical apps, creative tools, and brand-forward pages — only plain utilities (converters, CRUD trackers, admin dashboards) keep the placeholder. If this app is not a plain utility, finish the brand-asset pass per /workspace/.grok/skills/og/SKILL.md."
+  ],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

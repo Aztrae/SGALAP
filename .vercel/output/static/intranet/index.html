@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel SGA Lapisa</title>
+  <meta name="theme-color" content="#00142C" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="main">
+      <div class="wrap">
+        <header class="hero">
+          <div style="display:flex;gap:.7rem;align-items:flex-start">
+            <button type="button" class="btn btn-ghost-dark menu-btn no-print" id="btnMenu" aria-label="Menú">☰</button>
+            <div>
+              <h1 id="heroTitle">Resumen ejecutivo</h1>
+              <p id="heroSub">Desempeño ambiental consolidado</p>
+            </div>
+          </div>
+          <div class="hero-actions no-print" id="heroActions"></div>
+        </header>
+
+        <div class="how no-print" id="howto">
+          <b>Publicar en la intranet (sin internet).</b>
+          Copie esta carpeta completa al NAS o IIS. Debe quedar juntas: <code>index.html</code>, <code>styles.css</code>, <code>app.js</code>, <code>vendor/</code> y <code>Base_de_Datos_Dashboard.xlsx</code>.
+          Ábranla como página web (<code>http://servidor/sga/</code>), no con doble clic.
+          Cada mes sustituyan el Excel con el mismo nombre; recarguen el panel.
+          <ol>
+            <li>Si el Excel no carga solo, arrástrelo a esta barra o use «Subir Excel».</li>
+            <li>El código de edición protege huella, récords, metas y parámetros.</li>
+          </ol>
+          <button type="button" class="btn" id="btnHideHow" style="margin-top:.5rem">Entendido</button>
+        </div>
+
+        <div class="databar no-print" id="databar">
+          <div class="databar-row">
+            <span class="badge badge-muted" id="srcBadge">Cargando</span>
+            <span class="muted" id="srcMeta"></span>
+            <span class="ml-auto" style="margin-left:auto;display:flex;gap:.4rem;flex-wrap:wrap">
+              <button type="button" class="btn" id="btnUpload">Subir Excel</button>
+              <button type="button" class="btn" id="btnReload">Recargar</button>
+              <button type="button" class="btn" id="btnQuality">Calidad</button>
+              <a class="btn btn-navy hidden" id="btnZip" href="../Panel_SGA_Lapisa.zip" download>Descargar paquete</a>
+            </span>
+          </div>
+          <input id="fileExcel" type="file" accept=".xlsx" class="hidden" />
+          <div id="dropHint" class="drop-hint hidden">Suelte el consolidado .xlsx aquí</div>
+          <div id="qualityBox" class="quality hidden"></div>
+        </div>
+
+        <div id="viewRoot"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="backdrop" id="backdrop"></div>
+  <aside class="drawer" id="drawer"></aside>
+
+  <div class="overlay" id="unlockModal">
+    <div class="modal">
+      <h2>Desbloquear gestión corporativa</h2>
+      <p>Huella, récords, metas y parámetros usan el código de edición. No es un sistema de usuarios: cualquiera con el código puede editar en este navegador.</p>
+      <form id="unlockForm" style="display:flex;flex-direction:column;gap:.7rem;margin-top:1rem">
+        <input class="field" type="password" id="unlockCode" placeholder="Código de edición" autocomplete="off" />
+        <div id="unlockErr" style="color:var(--alert);font-weight:700;font-size:.85rem"></div>
+        <button class="btn btn-navy" type="submit">Entrar</button>
+        <button class="btn" type="button" id="unlockCancel">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="vendor/chart.umd.min.js"></script>
+  <script src="vendor/chartjs-plugin-datalabels.min.js"></script>
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+PANEL SGA LAPISA
+Funciona sin internet.
+
+PUBLICAR (cualquier persona de TI, 2 minutos)
+1. Copie ESTA CARPETA completa a un sitio web interno:
+   IIS, NAS (Web Station / carpeta web), Apache, o un share publicado como http.
+2. Deben quedar juntos, sin faltar nada:
+   - index.html
+   - styles.css
+   - app.js
+   - vendor/          (librerías; no requiere red)
+   - Base_de_Datos_Dashboard.xlsx
+3. Abra en el navegador:
+   http://servidor/sga/     (ejemplo)
+   NO abra el HTML con doble clic (file://). Ahí el Excel no se autocarga.
+
+ALIMENTAR LA BASE
+- Cada mes (o cuando haya datos nuevos) reemplace
+  Base_de_Datos_Dashboard.xlsx
+  por el consolidado nuevo, con el MISMO nombre y las mismas hojas:
+  Produccion, Energia, Agua, Residuos, Combustibles
+- Recargue la página. El panel lee el archivo solo.
+- Si no carga: arrastre el .xlsx a la barra superior o use «Subir Excel».
+
+QUIÉN PUEDE ABRIRLO
+- Cualquiera con el enlace interno. No hay usuarios ni contraseña de red.
+- Huella, récords, metas y parámetros piden el código de edición de siempre
+  (solo para evitar cambios accidentales).
+
+REQUISITO
+Un navegador moderno (Edge, Chrome, Firefox). Nada de Node, nada de instalar.
